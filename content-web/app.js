@@ -6,7 +6,7 @@ const request = require('request');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
-const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
+const contentApiUrl = process.env.CONTENT_API_URL || "http://20.120.7.21:3001";
 
 
 function getSessions(cb) {
@@ -15,7 +15,7 @@ function getSessions(cb) {
       return cb(err);
     }
     const data = JSON.parse(body); // Note: ASSUME: valid JSON
-    cb(null, data);
+    cb(null, data)
   });
 }
 
